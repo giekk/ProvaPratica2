@@ -29,3 +29,18 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B clean install 
+
+    - name: Upload Jacoco coverage report
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: jacoco-report
+        path: target/site/jacoco
+
+    - name: Upload coverage to Coveralls
+      run: mvn coveralls:report 
+      env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+      
+      
+    

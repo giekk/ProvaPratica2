@@ -11,6 +11,13 @@ import org.junit.Test;
 
 public class RomanPrinterTest 
 {
+  @Test(expected=IllegalArgumentException.class) //controllo che l'input sia>0
+    public void testNumberLessThanOneThrowsException() {
+      {
+        RomanPrinter.print(0); // Numero inferiore a 1
+      }
+    }
+
   @Test
   public void testFirst3Numbers() {
     String[] I = {
@@ -40,5 +47,45 @@ public class RomanPrinterTest
     assertEquals(IString, value_I);
     assertEquals(IIString, value_II);
     assertEquals(IIIString, value_III);
+  }
+  
+  @Test
+  public void testFirst6Numbers() {
+    String[] I = {
+      " ______ ",
+      "|_    _|",
+      "  |  |  ",
+      "  |  |  ",
+      " _|  |_ ",
+      "|______|"  
+    };
+    String[] V = {
+      "___     ___",
+      "\\  \\   /  /",
+      " \\  \\ /  / ",
+      "  \\     /  ",
+      "   \\   /   ",
+      "    \\_/    "
+    };
+       
+    String[] IV = new String[I.length];
+    String[] VI = new String[I.length];
+
+    for (int j = 0; j < I.length; j++) {
+        IV[j] = I[j] + V[j];         // Concatenazione orizzontale per IV
+        VI[j] = V[j] + I[j];         // Concatenazione orizzontale per VI
+    }
+
+    String IVString = String.join("\n", IV);
+    String VString = String.join("\n", V);
+    String VIString = String.join("\n", VI);
+
+    String value_IV = RomanPrinter.print(4);
+    String value_V = RomanPrinter.print(5);
+    String value_VI = RomanPrinter.print(6);
+
+    assertEquals(IVString, RomanPrinter.print(4));
+    assertEquals(VString, RomanPrinter.print(5));
+    assertEquals(VIString, RomanPrinter.print(6));
   }
 }

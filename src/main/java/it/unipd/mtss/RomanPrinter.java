@@ -26,10 +26,19 @@ public class RomanPrinter
         " _|  |_ ",
         "|______|"  
     };
+    String[] V = {
+         "___     ___",
+         "\\  \\   /  /",
+         " \\  \\ /  / ",
+         "  \\     /  ",
+         "   \\   /   ",
+         "    \\_/    "
+    };
 
     HashMap<Character, String[]> romanArt = new HashMap<>();
     romanArt.put('I', I);
-
+    romanArt.put('V', V);
+    
     String[] res = new String[I.length];
 
     for (int i = 0; i < I.length; i++) {

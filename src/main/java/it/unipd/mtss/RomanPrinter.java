@@ -42,20 +42,28 @@ public class RomanPrinter
          " /  ^  \\ ",
          "/__/ \\__\\"
     };
-        String[] L = {
-                " __     ",
-                "|  |    ",
-                "|  |    ",
-                "|  |    ",
-                "|  |___ ",
-                "|______|"
-        };
-
+    String[] L = {
+            " __     ",
+            "|  |    ",
+            "|  |    ",
+            "|  |    ",
+            "|  |___ ",
+            "|______|"
+    };
+    String[] C = {
+        " ______ ",
+        "/   ___|",
+        "|  |    ",
+        "|  |    ",
+        "|  |___ ",
+        "\\______|"
+    };
     HashMap<Character, String[]> romanArt = new HashMap<>();
     romanArt.put('I', I);
     romanArt.put('V', V);
     romanArt.put('X', X);
-        romanArt.put('L', L);
+    romanArt.put('L', L);
+    romanArt.put('C', C);
 
     String[] res = new String[I.length];
 

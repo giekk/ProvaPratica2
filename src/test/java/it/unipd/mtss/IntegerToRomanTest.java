@@ -65,4 +65,17 @@ public class IntegerToRomanTest
 		assertEquals("XLIX", result49);
 		assertEquals("L", result50);
 	}
+  @Test
+	public void testFirst100Numbers() { 
+		String result51 = IntegerToRoman.convert(51);
+		String result63 = IntegerToRoman.convert(63);
+		String result79 = IntegerToRoman.convert(79);
+		String result84 = IntegerToRoman.convert(84);
+		String result100 = IntegerToRoman.convert(100);	
+		assertEquals("LI", result51);
+		assertEquals("LXIII", result63);
+		assertEquals("LXXIX", result79);
+		assertEquals("LXXXIV", result84);
+		assertEquals("C", result100);
+	}
 }

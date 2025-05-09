@@ -1,4 +1,6 @@
 [![Java CI with Maven](https://github.com/giekk/ProvaPratica2/actions/workflows/build.yml/badge.svg)](https://github.com/giekk/ProvaPratica2/actions/workflows/build.yml)
+[![Coverage Status](https://coveralls.io/repos/github/giekk/ProvaPratica2/badge.svg)](https://coveralls.io/github/giekk/ProvaPratica2)
+![Checkstyle](https://github.com/giekk/roman-number/actions/workflows/checkstyle.yml/badge.svg)
 
 # ProvaPratica2
 ## Sviluppatori:

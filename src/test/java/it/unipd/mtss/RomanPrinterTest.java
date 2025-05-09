@@ -133,4 +133,52 @@ public class RomanPrinterTest
       String IXString = String.join("\n", IX);
       String XString = String.join("\n", X);
   }
+	@Test
+	public void testFirst20Numbers() { 
+		String[] I = {
+          " ______ ",
+          "|_    _|",
+          "  |  |  ",
+          "  |  |  ",
+          " _|  |_ ",
+          "|______|"  
+        };
+
+      String[] V = {
+            "___     ___",
+            "\\  \\   /  /",
+            " \\  \\ /  / ",
+            "  \\     /  ",
+            "   \\   /   ",
+            "    \\_/    "
+      };
+
+      String[] X = {
+            "___   ___",
+            "\\  \\ /  /",
+            " \\  V  / ",
+            "  >   <  ",
+            " /  ^  \\ ",
+            "/__/ \\__\\"
+      };
+			String[] XI = new String[I.length];
+			String[] XIII = new String[I.length];
+			String[] XVI = new String[I.length];
+			String[] XVIII = new String[I.length];
+			String[] XX = new String[I.length];
+
+			for (int j = 0; j < I.length; j++) {
+				XI[j] = X[j] + I[j] + I[j];         
+				XIII[j] = X[j] + I[j] + I[j] + I[j]; 
+				XVI[j] = X[j] + V[j] + I[j];      
+				XVIII[j] = X[j] + V[j] + I[j] + I[j]; 
+				XX[j] = X[j] + X[j];                
+			}		
+
+			String XIString = String.join("\n", XI);
+			String XIIIString = String.join("\n", XIII);
+			String XVIString = String.join("\n", XVI);
+			String XVIIIString = String.join("\n", XVIII);	
+			String XXString = String.join("\n", XX);
+	}
 }

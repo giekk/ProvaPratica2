@@ -39,4 +39,17 @@ public class IntegerToRomanTest
       assertEquals(expected[i - 1], result);
     }
   }
+	@Test
+	public void testFirst20Numbers() { 
+		String result11 = IntegerToRoman.convert(11);
+		String result13 = IntegerToRoman.convert(13);
+		String result16 = IntegerToRoman.convert(16);
+		String result18 = IntegerToRoman.convert(18);
+		String result20 = IntegerToRoman.convert(20);	
+		assertEquals("XI", result11);
+		assertEquals("XIII", result13);
+		assertEquals("XVI", result16);
+		assertEquals("XVIII", result18);
+		assertEquals("XX", result20);
+	}
 }

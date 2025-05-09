@@ -181,4 +181,58 @@ public class RomanPrinterTest
 			String XVIIIString = String.join("\n", XVIII);	
 			String XXString = String.join("\n", XX);
 	}
+	@Test
+	public void testFirst50Numbers() { 
+		String[] I = {
+					" ______ ",
+					"|_    _|",
+					"  |  |  ",
+					"  |  |  ",
+					" _|  |_ ",
+					"|______|"  
+				};
+
+		String[] V = {
+					"___     ___",
+					"\\  \\   /  /",
+					" \\  \\ /  / ",
+					"  \\     /  ",
+					"   \\   /   ",
+					"    \\_/    "
+		};
+
+		String[] X = {
+					"___   ___",
+					"\\  \\ /  /",
+					" \\  V  / ",
+					"  >   <  ",
+					" /  ^  \\ ",
+					"/__/ \\__\\"
+		};
+		String[] L = {
+				" __     ",
+				"|  |    ",
+				"|  |    ",
+				"|  |    ",
+				"|  |___ ",
+				"|______|"
+		};
+		String[] XXI = new String[I.length];
+		String[] XXVII = new String[I.length];
+		String[] XXXV = new String[I.length];
+		String[] XLIX = new String[I.length];
+
+		for (int j = 0; j < I.length; j++) {
+			XXI[j] = X[j] + X[j] + I[j];         
+			XXVII[j] = X[j] + X[j] + V[j] + I[j] + I[j]; 
+			XXXV[j] = X[j] + X[j] + V[j] + V[j];      
+			XLIX[j] = X[j] + L[j] + I[j];               
+		}		
+
+		String XXIString = String.join("\n", XXI);
+		String XXVIIString = String.join("\n", XXVII);
+		String XXXVString = String.join("\n", XXXV);
+		String XLIXString = String.join("\n", XLIX);	
+		String LString = String.join("\n", L);
+	}
 }

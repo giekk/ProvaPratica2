@@ -31,4 +31,12 @@ public class IntegerToRomanTest
       assertEquals(expected[i - 1], result);
     }
   }
+  @Test
+  public void testFirst10Numbers() { 
+    String[] expected = {"VII", "VIII", "IX", "X"};
+    for (int i = 1; i <= 4; i++) {
+      String result = IntegerToRoman.convert(i+6);
+      assertEquals(expected[i - 1], result);
+    }
+  }
 }

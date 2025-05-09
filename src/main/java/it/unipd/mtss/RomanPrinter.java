@@ -34,11 +34,20 @@ public class RomanPrinter
          "   \\   /   ",
          "    \\_/    "
     };
+    String[] X = {
+         "___   ___",
+         "\\  \\ /  /",
+         " \\  V  / ",
+         "  >   <  ",
+         " /  ^  \\ ",
+         "/__/ \\__\\"
+    };
 
     HashMap<Character, String[]> romanArt = new HashMap<>();
     romanArt.put('I', I);
     romanArt.put('V', V);
-    
+    romanArt.put('X', X);
+
     String[] res = new String[I.length];
 
     for (int i = 0; i < I.length; i++) {

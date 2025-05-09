@@ -88,4 +88,49 @@ public class RomanPrinterTest
     assertEquals(VString, RomanPrinter.print(5));
     assertEquals(VIString, RomanPrinter.print(6));
   }
+
+  @Test
+  public void testFirst10Numbers() {
+      String[] I = {
+          " ______ ",
+          "|_    _|",
+          "  |  |  ",
+          "  |  |  ",
+          " _|  |_ ",
+          "|______|"  
+        };
+
+      String[] V = {
+            "___     ___",
+            "\\  \\   /  /",
+            " \\  \\ /  / ",
+            "  \\     /  ",
+            "   \\   /   ",
+            "    \\_/    "
+      };
+
+      String[] X = {
+            "___   ___",
+            "\\  \\ /  /",
+            " \\  V  / ",
+            "  >   <  ",
+            " /  ^  \\ ",
+            "/__/ \\__\\"
+      };
+
+      String[] VII = new String[I.length];
+      String[] VIII = new String[I.length];
+      String[] IX = new String[I.length];
+
+      for (int j = 0; j < I.length; j++) {
+          VII[j] = V[j] + I[j] + I[j];         // Concatenazione orizzontale per VII
+          VIII[j] = V[j] + I[j] + I[j] + I[j]; // Concatenazione orizzontale per VIII
+          IX[j] = I[j] + X[j];                 // Concatenazione orizzontale per IX
+      }
+
+      String VIIString = String.join("\n", VII);
+      String VIIIString = String.join("\n", VIII);
+      String IXString = String.join("\n", IX);
+      String XString = String.join("\n", X);
+  }
 }

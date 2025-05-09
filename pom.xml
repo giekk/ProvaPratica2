@@ -71,8 +71,8 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <!-- Plugin Checkstyle -->
     <plugins>
+      <!-- Plugin Checkstyle -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-checkstyle-plugin</artifactId>
@@ -84,13 +84,35 @@
               <failsOnError>true</failsOnError>
           </configuration>
           <executions>
-              <execution>
-                  <phase>validate</phase>
-                  <goals>
-                      <goal>check</goal>
-                  </goals>
+            <execution>
+              <phase>validate</phase>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+            </execution>
+          </executions>
+      </plugin>
+      <!-- JaCoCo -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.6</version>
+          <executions>
+             <execution>
+                <id>prepare-agent</id>
+                <goals>
+                   <goal>prepare-agent</goal>
+                </goals>
               </execution>
           </executions>
+      </plugin>
+      <plugin>
+          <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>4.3.0</version>
+            <configuration>
+              <repoToken>${env.COVERALLS_REPO_TOKEN}</repoToken>
+            </configuration>
       </plugin>
     </plugins>
   </build>

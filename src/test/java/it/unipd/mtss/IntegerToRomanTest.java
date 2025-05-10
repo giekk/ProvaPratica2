@@ -91,4 +91,21 @@ public class IntegerToRomanTest
 		assertEquals("CCCXCIX", result399);
 		assertEquals("D", result500);
 	}
+	@Test 
+	public void testFirst1000Numbers() { 
+		String result501 = IntegerToRoman.convert(501);
+		String result699 = IntegerToRoman.convert(699);
+		String result749 = IntegerToRoman.convert(749);
+		String result999 = IntegerToRoman.convert(999);
+		String result1000 = IntegerToRoman.convert(1000);	
+		assertEquals("DI", result501);
+		assertEquals("DCXCIX", result699);
+		assertEquals("DCCXLIX", result749);
+		assertEquals("CMXCIX", result999);
+		assertEquals("M", result1000);
+	}
+	@Test(expected=IllegalArgumentException.class)
+    public void testNumberMoreThan1000() {
+      IntegerToRoman.convert(1001); // Numero superiore a 1000
+	}
 }

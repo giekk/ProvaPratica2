@@ -395,6 +395,7 @@ public class RomanPrinterTest
       "|  |__|  |",
       "|_______/ "
     };
+    
     String[] CI = new String[I.length];
     String[] CXCIX = new String[I.length];
     String[] CCXLIX = new String[I.length];
@@ -424,6 +425,103 @@ public class RomanPrinterTest
     assertEquals(CCXLIXString, value_CCXLIX);
     assertEquals(CCCXCIXString, value_CCCXCIX);
     assertEquals(DString, value_D);
+  }
+  @Test
+  public void testFirst1000Numbers() {
+    String[] I = {
+        " ______ ",
+        "|_    _|",
+        "  |  |  ",
+        "  |  |  ",
+        " _|  |_ ",
+        "|______|"  
+    };
+
+    String[] V = {
+        "___     ___",
+        "\\  \\   /  /",
+        " \\  \\ /  / ",
+        "  \\     /  ",
+        "   \\   /   ",
+        "    \\_/    "
+    };
+
+    String[] X = {
+        "___   ___",
+        "\\  \\ /  /",
+        " \\  V  / ",
+        "  >   <  ",
+        " /  ^  \\ ",
+        "/__/ \\__\\"
+    };
+    String[] L = {
+        " __     ",
+        "|  |    ",
+        "|  |    ",
+        "|  |    ",
+        "|  |___ ",
+        "|______|"
+    };
+    String[] C = {
+      " ______ ",
+      "/   ___|",
+      "|  |    ",
+      "|  |    ",
+      "|  |___ ",
+      "\\______|"
+    };
+    String[] D = {
+      " _______  ",
+      "|   __  \\ ",
+      "|  |  |  |",
+      "|  |  |  |",
+      "|  |__|  |",
+      "|_______/ "
+    };
+    String[] M = {
+      " ___  ___ ",
+      "|   \\/   |",
+      "|  \\  /  |",
+      "|  |\\/|  |",
+      "|  |  |  |",
+      "|__|  |__|"
+    };
+
+    String[] DI = new String[I.length];
+    String[] DCXCIX = new String[I.length];
+    String[] DCCXLIX = new String[I.length];
+    String[] CMXCIX = new String[I.length];
+
+    for (int j = 0; j < I.length; j++) {
+        DI[j] = D[j] + I[j];         
+        DCXCIX[j] = D[j] + C[j] + X[j] + C[j] + I[j] + X[j];
+        DCCXLIX[j] = D[j] + C[j] + C[j] + X[j] + L[j] + I[j] + X[j];      
+        CMXCIX[j] = C[j] + M[j] + X[j] + C[j] + I[j] + X[j];         
+    }
+
+    String DIString = String.join("\n", DI);
+    String DCXCIXString = String.join("\n", DCXCIX);
+    String DCCXLIXString = String.join("\n", DCCXLIX);
+    String CMXCIXString = String.join("\n", CMXCIX);
+    String MString = String.join("\n", M);
+
+    String value_DI = RomanPrinter.print(501);
+    String value_DCXCIX = RomanPrinter.print(699);
+    String value_DCCXLIX = RomanPrinter.print(749);
+    String value_CMXCIX = RomanPrinter.print(999);
+    String value_M = RomanPrinter.print(1000);
+
+    assertEquals(DIString, value_DI);
+    assertEquals(DCXCIXString, value_DCXCIX);
+    assertEquals(DCCXLIXString, value_DCCXLIX);
+    assertEquals(CMXCIXString, value_CMXCIX);
+    assertEquals(MString, value_M);
+  }
+  @Test(expected=IllegalArgumentException.class) 
+  public void testNumberMoreThan1000() {
+    {
+      RomanPrinter.print(1001); // Numero maggiore di 1000
+    }
   }
 }
 

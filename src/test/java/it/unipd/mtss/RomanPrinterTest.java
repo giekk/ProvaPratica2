@@ -269,7 +269,7 @@ public class RomanPrinterTest
     assertEquals(XLIXString, value_XLIX);
     assertEquals(LString, value_L);
 	}
-  	@Test
+  @Test
 	public void testFirst100Numbers() { 
 		String[] I = {
 					" ______ ",
@@ -343,4 +343,87 @@ public class RomanPrinterTest
     assertEquals(LXXXIVString, value_LXXXIV);
     assertEquals(CString, value_C);
 	}
+  @Test
+  public void testFirst500Numbers() {
+    String[] I = {
+        " ______ ",
+        "|_    _|",
+        "  |  |  ",
+        "  |  |  ",
+        " _|  |_ ",
+        "|______|"  
+    };
+
+    String[] V = {
+        "___     ___",
+        "\\  \\   /  /",
+        " \\  \\ /  / ",
+        "  \\     /  ",
+        "   \\   /   ",
+        "    \\_/    "
+    };
+
+    String[] X = {
+        "___   ___",
+        "\\  \\ /  /",
+        " \\  V  / ",
+        "  >   <  ",
+        " /  ^  \\ ",
+        "/__/ \\__\\"
+    };
+    String[] L = {
+        " __     ",
+        "|  |    ",
+        "|  |    ",
+        "|  |    ",
+        "|  |___ ",
+        "|______|"
+    };
+    String[] C = {
+      " ______ ",
+      "/   ___|",
+      "|  |    ",
+      "|  |    ",
+      "|  |___ ",
+      "\\______|"
+    };
+    String[] D = {
+      " _______  ",
+      "|   __  \\ ",
+      "|  |  |  |",
+      "|  |  |  |",
+      "|  |__|  |",
+      "|_______/ "
+    };
+    String[] CI = new String[I.length];
+    String[] CXCIX = new String[I.length];
+    String[] CCXLIX = new String[I.length];
+    String[] CCCXCIX = new String[I.length];
+
+    for (int j = 0; j < I.length; j++) {
+        CI[j] = C[j] + I[j];         
+        CXCIX[j] = C[j] + X[j] + C[j] + I[j] + X[j]; 
+        CCXLIX[j] = C[j] + C[j] + X[j] + L[j] + I[j] + X[j];      
+        CCCXCIX[j] = C[j] + C[j] + C[j]+ X[j] + C[j] + I[j] + X[j];         
+    }
+
+    String CIString = String.join("\n", CI);
+    String CXCIXString = String.join("\n", CXCIX);
+    String CCXLIXString = String.join("\n", CCXLIX);
+    String CCCXCIXString = String.join("\n", CCCXCIX);
+    String DString = String.join("\n", D);
+
+    String value_CI = RomanPrinter.print(101);
+    String value_CXCIX = RomanPrinter.print(199);
+    String value_CCXLIX = RomanPrinter.print(249);
+    String value_CCCXCIX = RomanPrinter.print(399);
+    String value_D = RomanPrinter.print(500);
+
+    assertEquals(CIString, value_CI);
+    assertEquals(CXCIXString, value_CXCIX);
+    assertEquals(CCXLIXString, value_CCXLIX);
+    assertEquals(CCCXCIXString, value_CCCXCIX);
+    assertEquals(DString, value_D);
+  }
 }
+

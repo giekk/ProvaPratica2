@@ -58,12 +58,21 @@ public class RomanPrinter
         "|  |___ ",
         "\\______|"
     };
+    String[] D = {
+        " _______  ",
+        "|   __  \\ ",
+        "|  |  |  |",
+        "|  |  |  |",
+        "|  |__|  |",
+        "|_______/ "
+    };
     HashMap<Character, String[]> romanArt = new HashMap<>();
     romanArt.put('I', I);
     romanArt.put('V', V);
     romanArt.put('X', X);
     romanArt.put('L', L);
     romanArt.put('C', C);
+    romanArt.put('D', D);
 
     String[] res = new String[I.length];
 
